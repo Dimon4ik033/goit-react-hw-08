@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+body {
+  background-image: url(/src/images/bgImage.jpg);
+  min-height: 100vh;
+  background-size: cover;
+}

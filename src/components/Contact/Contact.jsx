@@ -2,7 +2,7 @@ import css from './Contact.module.css';
 import { IoIosCall } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { deleteContacts } from '../../redux/contactsOps';
+import { deleteContacts } from '../../redux/contacts/operations';
 
 export default function Contact({ name, number, id }) {
   const dispatch = useDispatch();
@@ -21,11 +21,11 @@ export default function Contact({ name, number, id }) {
         <p>
           <span className={css.svgIcon}>
             <IoIosCall />
+            {number}
           </span>
-          {number}
         </p>
       </div>
-      <button type="button" className={css.btn} onClick={handleDelete}>
+      <button type='button' className='btn btn-error' onClick={handleDelete}>
         Delete
       </button>
     </li>

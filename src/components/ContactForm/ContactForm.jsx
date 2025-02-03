@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContacts } from '../../redux/contactsOps';
+import { addContacts } from '../../redux/contacts/operations';
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -28,32 +28,20 @@ export default function ContactForm() {
   });
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       {() => (
         <Form className={css.form}>
           <div className={css.container}>
-            <label htmlFor="name">Name</label>
-            <Field type="text" id="name" name="name" />
-            <ErrorMessage
-              name="name"
-              component="div"
-              style={{ color: 'red' }}
-            />
+            <label htmlFor='name'>Name</label>
+            <Field type='text' id='name' name='name' />
+            <ErrorMessage name='name' component='div' style={{ color: 'red' }} />
           </div>
           <div className={css.container}>
-            <label htmlFor="number">Number</label>
-            <Field type="text" id="number" name="number" />
-            <ErrorMessage
-              name="number"
-              component="div"
-              style={{ color: 'red' }}
-            />
+            <label htmlFor='number'>Number</label>
+            <Field type='text' id='number' name='number' />
+            <ErrorMessage name='number' component='div' style={{ color: 'red' }} />
           </div>
-          <button type="submit" className={css.btn}>
+          <button type='submit' className='btn btn-active btn-success'>
             Add Contact
           </button>
         </Form>
