@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import css from './Header.module.css';
+import css from './UserMenu.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from '../../redux/auth/selectors';
 import { logoutThunk } from '../../redux/auth/operations';
