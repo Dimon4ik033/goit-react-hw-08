@@ -1,11 +1,11 @@
-import { Outlet } from 'react-router-dom';
-import Header from '../UserMenu/UserMenu';
+import { Suspense } from 'react';
+import { AppBar } from '../AppBar/AppBar.jsx';
 
-export default function Layout() {
+export const Layout = ({ children }) => {
   return (
     <div>
-      <Header />
-      <Outlet />
+      <AppBar />
+      <Suspense fallback={null}>{children}</Suspense>
     </div>
   );
-}
+};
